@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Open+Sans:wght@400;600&display=swap');
+    
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body { 
+      width: 3840px; 
+      height: 1028px; 
+      background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+      overflow: hidden;
+      font-family: 'Open Sans', sans-serif;
+      position: relative;
+    }
+    
+    /* Header Bar */
+    .header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 180px;
+      background: rgba(0,0,0,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 8px solid #ffd700;
+      z-index: 10;
+    }
+    
+    .header h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 120px;
+      font-weight: 900;
+      color: #ffffff;
+      text-transform: uppercase;
+      letter-spacing: 10px;
+      text-shadow: 4px 4px 8px rgba(0,0,0,0.5);
+    }
+    
+    .header .shsm-badge {
+      position: absolute;
+      right: 100px;
+      background: #ffd700;
+      color: #1e3c72;
+      padding: 20px 40px;
+      border-radius: 20px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 48px;
+      font-weight: 700;
+      transform: rotate(5deg);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    }
+    
+    /* Slide Container */
+    .slide-container {
+      position: absolute;
+      top: 180px;
+      left: 0;
+      width: 100%;
+      height: 648px;
+    }
+    
+    .slide {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 1.5s ease-in-out;
+      padding: 0 200px;
+    }
+    
+    .slide.active { opacity: 1; }
+    
+    /* Program Cards */
+    .program-card {
+      display: flex;
+      align-items: center;
+      gap: 100px;
+      background: rgba(255,255,255,0.95);
+      padding: 80px 120px;
+      border-radius: 40px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+      max-width: 3200px;
+      width: 100%;
+    }
+    
+    .icon-box {
+      width: 300px;
+      height: 300px;
+      border-radius: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 140px;
+      flex-shrink: 0;
+    }
+    
+    .program-content h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 96px;
+      font-weight: 700;
+      margin-bottom: 30px;
+      line-height: 1.1;
+    }
+    
+    .program-content p {
+      font-size: 48px;
+      color: #555;
+      line-height: 1.4;
+      font-weight: 600;
+    }
+    
+    /* Program Specific Colors */
+    .construction .icon-box { background: #e74c3c; }
+    .construction h2 { color: #c0392b; }
+    
+    .healthcare .icon-box { background: #27ae60; }
+    .healthcare h2 { color: #1e8449; }
+    
+    .ict .icon-box { background: #8e44ad; }
+    .ict h2 { color: #6c3483; }
+    
+    /* Footer CTA */
+    .footer {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 200px;
+      background: rgba(0,0,0,0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-top: 6px solid #ffd700;
+    }
+    
+    .cta {
+      font-size: 64px;
+      color: #ffffff;
+      font-weight: 700;
+      text-align: center;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+      animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+    
+    .cta-arrow {
+      font-size: 80px;
+      margin-left: 30px;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <h1>Tech SHSM Programs</h1>
+    <div class="shsm-badge">SHSM</div>
+  </div>
+
+  <!-- Slides Container -->
+  <div class="slide-container">
+    
+    <!-- Slide 1: Construction -->
+    <div class="slide active construction">
+      <div class="program-card">
+        <div class="icon-box">🏗️</div>
+        <div class="program-content">
+          <h2>Construction & Carpentry</h2>
+          <p>Build your future with hands-on training in modern construction techniques, blueprint reading, and skilled carpentry. From residential builds to commercial projects.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 2: Health Care -->
+    <div class="slide healthcare">
+      <div class="program-card">
+        <div class="icon-box">🏥</div>
+        <div class="program-content">
+          <h2>Health Care & Medical Technologies</h2>
+          <p>Launch your healthcare career with specialized training in patient care, medical equipment, and clinical laboratory techniques. The future of medicine starts here.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 3: ICT -->
+    <div class="slide ict">
+      <div class="program-card">
+        <div class="icon-box">💻</div>
+        <div class="program-content">
+          <h2>Information & Communication Technologies</h2>
+          <p>Master the digital world through programming, networking, cybersecurity, and IT support. Shape the technology of tomorrow.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer CTA -->
+  <div class="footer">
+    <div class="cta">
+      Interested? Ask your Guidance Counsellor for details! <span class="cta-arrow">→</span>
+    </div>
+  </div>
+
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    let currentSlide = 0;
+    const slideInterval = 8000; // 8 seconds per program
+    
+    function nextSlide() {
+      slides[currentSlide].classList.remove('active');
+      currentSlide = (currentSlide + 1) % slides.length;
+      slides[currentSlide].classList.add('active');
+    }
+    
+    setInterval(nextSlide, slideInterval);
+  </script>
+
+</body>
+</html>
